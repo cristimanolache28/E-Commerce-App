@@ -1,4 +1,4 @@
-package com.lov2ode.shop.entity;
+package com.lov2code.shop.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

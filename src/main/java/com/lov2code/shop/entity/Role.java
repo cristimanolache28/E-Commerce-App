@@ -1,4 +1,4 @@
-package com.lov2ode.shop.entity;
+package com.lov2code.shop.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -53,9 +53,7 @@ public class Role {
 
     @Override
     public String toString() {
-        return "Role{" +
-                "name='" + name + '\'' +
-                '}';
+        return this.name;
     }
 }
 

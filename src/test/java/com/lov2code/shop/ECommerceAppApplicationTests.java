@@ -1,4 +1,4 @@
-package com.lov2ode.shop;
+package com.lov2code.shop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

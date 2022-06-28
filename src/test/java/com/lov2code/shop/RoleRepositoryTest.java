@@ -1,7 +1,8 @@
-package com.lov2ode.shop;
+package com.lov2code.shop;
 
-import com.lov2ode.shop.entity.Role;
-import com.lov2ode.shop.repository.RoleRepository;
+import com.lov2code.shop.repository.RoleRepository;
+import com.lov2code.shop.entity.Role;
+import com.lov2code.shop.repository.RoleRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
