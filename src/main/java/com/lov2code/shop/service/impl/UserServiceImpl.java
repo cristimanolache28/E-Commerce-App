@@ -6,6 +6,7 @@ import com.lov2code.shop.repository.RoleRepository;
 import com.lov2code.shop.repository.UserRepository;
 import com.lov2code.shop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RoleRepository roleRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public Iterable<User> listUsers() {
         return userRepository.findAll();
@@ -30,6 +34,14 @@ public class UserServiceImpl implements UserService {
     }
 
     public void save(User user) {
+        encodePassword(user);
         userRepository.save(user);
     }
+
+    // encode the user password
+    public void encodePassword(User user) {
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+    }
+
 }
