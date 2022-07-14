@@ -12,6 +12,8 @@
           crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap-grid.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
     <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </head>
@@ -91,21 +93,31 @@
                 <th scope="col">Last Name</th>
                 <th scope="col">Roles</th>
                 <th scope="col" class="text-center">Enable</th>
-                <th scope="col"></th>
+                <th scope="col" class="text-center">Operations</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="user : ${listUsers}">
                 <td th:text="${user.id}"></td>
-                <td></td>
+                <td><span class="fas fa-portrait fa-3x icon-silver"></span></td>
                 <td th:text="${user.email}"></td>
                 <td th:text="${user.firstName}"></td>
                 <td th:text="${user.lastName}"></td>
                 <td th:text="${user.roles}"></td>
-                <td th:text="${user.enable}"></td>
                 <td class="text-center">
-                    <a th:href="@{users/info/{id} (id=${user.id})}" class="btn btn-info" title="All info about this user">Info</a>
+                    <a th:if="${user.enable == true}" class="fas fa-check-circle fa-2x icon-green" href=""></a>
+                    <a th:if="${user.enable == false}" class="fas fa-check-circle fa-2x icon-dark" href=""></a>
                 </td>
+                <td class="text-center">
+                    <a class="fas fa-edit fa-2x icon-green" href=""></a>
+                    &nbsp; &nbsp;
+                    <a class="fas fa-trash fa-2x icon-red" href=""></a>
+                    &nbsp; &nbsp;
+                    <a class="fas fa-info fa-2x icon-yellow" href=""></a>
+                </td>
+<!--                <td class="text-center">-->
+<!--                    <a th:href="@{users/info/{id} (id=${user.id})}" class="btn btn-info" title="All info about this user">Info</a>-->
+<!--                </td>-->
             </tr>
             </tbody>
         </table>
@@ -118,3 +130,4 @@
 </div>
 </body>
 </html>
+

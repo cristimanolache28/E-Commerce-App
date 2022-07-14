@@ -87,4 +87,55 @@ public class UserRepositoryTest {
         repository.findById(userId);
     }
 
+    @Test
+    public void testGetUserByEmail() {
+        User newUser = new User("Dan", "Barbu", "dan@yahoo.com", "xxas");
+        repository.save(newUser);
+
+        User currentUser = repository.getUserByEmail("dan@yahoo.com");
+        System.out.println(currentUser);
+
+        assertThat(currentUser).isNotNull();
+    }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

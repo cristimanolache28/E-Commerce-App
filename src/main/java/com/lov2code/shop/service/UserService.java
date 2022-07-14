@@ -13,6 +13,8 @@ public interface UserService {
 
     Iterable<Role> listRoles();
 
+    public boolean isEmailUnique(String email);
+
 
 
 }
